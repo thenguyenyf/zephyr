@@ -2,6 +2,8 @@ manifest:
   remotes:
     - name: upstream
       url-base: https://github.com/zephyrproject-rtos
+    - name: thenguyenyf
+      url-base: https://github.com/thenguyenyf
   # zephyr-keep-sorted-start re(^\s+\- name:)
   projects:
     - name: chre
@@ -21,6 +23,13 @@ manifest:
       revision: dd73abc242e995784da62352fe8c70d9a6c7ac2e
       path: modules/lang/rust
       remote: upstream
+      groups:
+        - optional
+    - name: tinyusb
+      revision: zephyr_intergration
+      path: modules/lib/tinyusb
+      repo-path: tinyusb
+      remote: thenguyenyf
       groups:
         - optional
 # zephyr-keep-sorted-stop
