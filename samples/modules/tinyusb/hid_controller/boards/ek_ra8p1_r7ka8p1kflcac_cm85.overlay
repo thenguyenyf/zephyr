@@ -1,0 +1,25 @@
+/*
+ * Copyright (c) 2026 Renesas Electronics Corporation
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&usbfs {
+	interrupts = <55 12>, <56 12>;
+	interrupt-names = "usbfs-i", "usbfs-r";
+	status = "okay";
+};
+
+/*
+ * Set PD07 to high to drive USBHS host-mode enable on the ek_ra8p1 board.
+ */
+&ioportd {
+	status = "okay";
+
+	usbh-hog {
+		gpio-hog;
+		gpios = <7 GPIO_ACTIVE_HIGH>;
+		output-high;
+		line-name = "usbh-hog";
+	};
+};
