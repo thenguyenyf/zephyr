@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: Apache-2.0
+
+config ZEPHYR_TINYUSB_MODULE
+	bool
+
+menuconfig TINYUSB
+	bool "TinyUSB Support"
+	depends on ZEPHYR_TINYUSB_MODULE
+	help
+	  This option enables the TinyUSB stack for USB device and host support.
